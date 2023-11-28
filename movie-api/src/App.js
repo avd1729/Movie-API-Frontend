@@ -9,8 +9,8 @@ function App() {
   const getMovies = async () =>{ // asynchronous thread management
 
     try{
-
-      const response = await api.get("api/v1/movies/");
+      
+      const response = await api.get("/api/v1/movies/");
 
       console.log(response.data);
 
@@ -22,19 +22,22 @@ function App() {
 
         console.log(err)
     }
-
-    useEffect(()=>{
-
-      getMovies();
-      
-    },[])
     
   }
+  useEffect(()=>{
+
+    getMovies();
+    
+  },[])
+
   return (
     <div className="App">
       
     </div>
   );
 }
+
+
+
 
 export default App;
